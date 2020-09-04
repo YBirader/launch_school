@@ -1,0 +1,53 @@
+en:
+  language: |
+       For English, enter: en
+       For Spanish, enter: es
+  valid_language: |
+      Please enter a valid language.
+      Ingrese un idioma válido.
+  welcome: "Welcome to the Calculator! Enter your name:"
+  greeting: "Hello %{name}!"
+  valid_name: "Please enter a valid name."
+  first_number: "What is your first number?"
+  second_number: "What is your second number?"
+  valid_number: "Invalid number. Try again."
+  operation: |
+      What operation would you like to perform:
+      1) Add
+      2) Multiply
+      3) Subtract
+      4) Divide
+  add: "adding"
+  multiply: "multiplying"
+  subtract: "subtracting"
+  divide: "dividing"
+  zero_division_error: "Cannot divide by 0."
+  computing_operation: "%{operation} the two numbers..."
+  valid_operation: 'Invalid operation. Try again.'
+  result: "The result is %{result}."
+  repeat_calculation: "Do you want to do another calculation?"
+  goodbye: "Thank you for using Calculator!"
+
+es:
+  welcome: "Bienvenido a la Calculadora! Introduzca su nombre:"
+  greeting: "Hola %{name}!"
+  valid_name: "Por favor ingrese un nombre valido."
+  first_number: "Cual es tu primer numero?"
+  second_number: "Cual es tu segundo numero?"
+  valid_number: "Número invalido. Inténtalo de nuevo."
+  operation: |
+      Qué operación le gustaría realizar:
+      1) añadir
+      2) Multiplicar
+      3) Sustraer
+      4) Dividir
+  add: "agregando"
+  multiply: "multiplicar"
+  subtract: "restando"
+  divide: "divisor"
+  zero_division_error: "No se puede dividir entre 0"
+  computing_operation: "%{operation} los dos números ..."
+  valid_operation: 'Operación inválida. Inténtalo de nuevo.'
+  result: "El resultado es %{result}."
+  repeat_calculation: "¿Quieres hacer otro cálculo?"
+  goodbye: "Gracias por usar Calculadora!"
