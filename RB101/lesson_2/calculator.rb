@@ -40,75 +40,92 @@ def valid_language?(lang)
 end
 
 def zero_division_error?(num1, num2, operation)
-  if (num1 != '0') && (num2 == '0') && (operation == '4')
-    true
-  else
-    false
+  (num1 != '0') && (num2 == '0') && (operation == '4')
+end
+
+def calculate_result(first_number, second_number, operation)
+  case operation
+  when '1' then first_number.to_i + second_number.to_i
+  when '2' then first_number.to_i * second_number.to_i
+  when '3' then first_number.to_i - second_number.to_i
+  when '4' then first_number.to_f / second_number.to_f
   end
 end
 
-language = ''
-loop do
-  prompt(messages('language'))
-  language = gets.chomp
-  break if valid_language?(language)
-  prompt(messages('valid_language'))
+def retrieve_number(num_order, lang)
+  number = ''
+  loop do
+    prompt(messages(num_order, lang))
+    number = gets.chomp
+    break if valid_number?(number)
+    prompt(messages('valid_number', lang))
+  end
+  number
 end
 
-name = ''
-loop do
-  prompt(messages('welcome', language))
-  name = gets.chomp
-  break unless name.empty?
-  prompt(messages('valid_name', language))
+def retrieve_language
+  language = ''
+  loop do
+    prompt(messages('language'))
+    language = gets.chomp.downcase
+    break if valid_language?(language)
+    prompt(messages('valid_language'))
+  end
+  language
 end
 
-loop do
-  first_number = ''
-  second_number = ''
+def retrieve_name(lang)
+  name = ''
+  loop do
+    prompt(messages('welcome', lang))
+    name = gets.chomp
+    break unless name.empty?
+    prompt(messages('valid_name', lang))
+  end
+  name
+end
+
+def retrieve_operation(num1, num2, language)
   operation = ''
-
-  puts format(messages('greeting', language), name: name)
-
-  loop do
-    prompt(messages('first_number', language))
-    first_number = gets.chomp
-    break if valid_number?(first_number)
-    prompt(messages('valid_number', language))
-  end
-
-  loop do
-    prompt(messages('second_number', language))
-    second_number = gets.chomp
-    break if valid_number?(second_number)
-    prompt(messages('valid_number', language))
-  end
-
   loop do
     prompt(messages('operation', language))
     operation = gets.chomp
-    if zero_division_error?(first_number, second_number, operation)
+    if zero_division_error?(num1, num2, operation)
       prompt(messages('zero_division_error', language))
-    elsif valid_opeartion?(operation)
+    elsif valid_operation?(operation)
       break
     end
   end
-
   prompt(messages('valid_operator', language))
+  operation
+end
+
+def repeat_calculation(lang)
+  response = ''
+  loop do
+    prompt(messages('repeat_calculation', lang))
+    response = gets.chomp.downcase
+    break if response == 'y' || response == 'n'
+    prompt(messages('valid_response', lang))
+  end
+  response
+end
+
+language = retrieve_language
+name = retrieve_name(language)
+puts format(messages('greeting', language), name: name)
+
+loop do
+  first_number = retrieve_number('first_number', language)
+  second_number = retrieve_number('second_number', language)
+  operation = retrieve_operation(first_number, second_number, language)
   puts format(messages('computing_operation', language),
               operation: operation_message(operation, language))
 
-  result = case operation
-           when '1' then first_number.to_i + second_number.to_i
-           when '2' then first_number.to_i * second_number.to_i
-           when '3' then first_number.to_i - second_number.to_i
-           when '4' then first_number.to_f / second_number.to_f
-           end
+  result = calculate_result(first_number, second_number, operation)
   puts format(messages('result', language), result: result)
-
-  prompt(messages('repeat_calculation', language))
-  response = gets.chomp.downcase
-  break unless response.start_with?('y')
+  response = repeat_calculation(language)
+  break unless response == 'y'
 end
 
 prompt(messages('goodbye', language))

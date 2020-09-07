@@ -25,7 +25,8 @@ en:
   computing_operation: "%{operation} the two numbers..."
   valid_operation: 'Invalid operation. Try again.'
   result: "The result is %{result}."
-  repeat_calculation: "Do you want to do another calculation?"
+  repeat_calculation: "Do you want to do another calculation? Enter 'y' or 'n'."
+  valid_response: "Invalid response. Enter 'y' or 'n'."
   goodbye: "Thank you for using Calculator!"
 
 es:
@@ -49,5 +50,6 @@ es:
   computing_operation: "%{operation} los dos números ..."
   valid_operation: 'Operación inválida. Inténtalo de nuevo.'
   result: "El resultado es %{result}."
-  repeat_calculation: "¿Quieres hacer otro cálculo?"
+  repeat_calculation: "¿Quieres hacer otro cálculo? Ingrese 'y' o 'n'"
+  valid_response: "Respuesta invalida. Ingrese 'y' o 'n'."
   goodbye: "Gracias por usar Calculadora!"
