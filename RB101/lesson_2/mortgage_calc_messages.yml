@@ -1,0 +1,51 @@
+en:
+  welcome: "Hello %{name}. Welcome to Mortgage Calculator!"
+  get_loan_amount: "Please enter the loan amount, in GBP:"
+  invalid_loan_amount: "Invalid loan amount."
+  get_loan_duration: "Please enter the loan duration, in years:"
+  invalid_loan_duration: "Invalid loan duration."
+  get_apr: "Please enter the loan APR:
+            e.g. for 10%, enter 10."
+  invalid-apr: "Invalid APR."
+  get_language: |
+                For English, enter 'en'
+                For Spanish, enter 'es'
+  invalid_language: |
+                    Invalid language.
+                    Idioma no válido.
+  get_name: "Please enter your name:"
+  invalid_name: "Invalid name."
+  summary: |
+    Here are your results:
+      Loan Amount: £%{amount}
+      Loan Duration: %{duration} months
+      APR: %{apr}%
+      Monthly Payment: £%{monthly_payment}
+      Total Interest Payable: £%{total_interest_payable}
+      Total Payment: £%{total_payment}
+  repeat: "Would you like to repeat? Enter 'y' or 'n':"
+  invalid_response: "Invalid response."
+  goodbye: "Thank you for using Mortgage Calculator!"
+  
+es:
+  welcome: "Hola %{name}. ¡Bienvenido a Calculadora de hipotecas!"
+  get_loan_amount: "Ingrese el monto del préstamo, en euros:"
+  invalid_loan_amount: "Monto del préstamo no válido."
+  get_loan_duration: "Ingrese la duración del préstamo, en años:"
+  invalid_loan_duration: "Duración del préstamo no válida."
+  get_apr: "Ingrese la APR del préstamo:
+             p.ej. para el 10%, ingrese 10."
+  invalid-apr: "APR no válido."
+  get_name: "Por favor, escriba su nombre:"
+  invalid_name: "Nombre inválido."
+  summary: |
+    Aquí están tus resultados:
+       Importe del préstamo: €%{amount}
+       Duración del préstamo: %{duration} meses
+       APR: %{apr}%
+       Pago mensual: €%{monthly_payment}
+       Interés total a pagar: £%{total_interest_payable}
+       Pago total: €%{total_payment}
+  repeat: "¿Te gustaría repetir? Ingrese 'y' o 'n':"
+  invalid_response: "Respuesta invalida."
+  goodbye: "¡Gracias por usar la Calculadora de hipotecas!"
