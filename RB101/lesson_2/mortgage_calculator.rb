@@ -1,5 +1,4 @@
 require 'yaml'
-require 'pry'
 MESSAGES = YAML.load_file('mortgage_calc_messages.yml')
 MONTHS_IN_YEAR = 12
 
