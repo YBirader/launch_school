@@ -26,7 +26,7 @@ def valid_amount?(num)
 end
 
 def valid_rate?(rate)
-  /^\d+(\.d*)?$/.match(rate)
+  /^\d+(\.d*)?$/.match(rate) && rate > '0'
 end
 
 def retrieve_loan_duration(language)
@@ -115,7 +115,7 @@ def total_payable(amount, total_interest)
   amount + total_interest
 end
 
-def repeat(language)
+def another_calculation?(language)
   response = ''
   loop do
     prompt(messages('repeat', language))
@@ -123,11 +123,11 @@ def repeat(language)
     break if valid_response?(response)
     prompt(messages('invalid_response', language))
   end
-  response
+  response == 'y'
 end
 
 def valid_response?(response)
-  %w(y n).include?(response)
+  %w(y yes no n).include?(response)
 end
 
 def format_currency(amount)
@@ -138,6 +138,7 @@ def clear_prompt
   system("clear") || system("cls")
 end
 
+clear_prompt()
 language = retrieve_language()
 clear_prompt()
 name = retrieve_name(language)
@@ -167,8 +168,7 @@ loop do
               total_interest_payable: total_interest_payable.round(2),
               total_payment: total_payment.round(2))
 
-  response = repeat(language)
-  break unless response == 'y'
+  break unless another_calculation?(language)
 end
 
 prompt(messages('goodbye', language))

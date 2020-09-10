@@ -6,10 +6,10 @@ en:
   invalid_loan_duration: "Invalid loan duration."
   get_apr: "Please enter the loan APR:
             e.g. for 10%, enter 10."
-  invalid-apr: "Invalid APR."
+  invalid_apr: "Invalid APR."
   get_language: |
                 For English, enter 'en'
-                For Spanish, enter 'es'
+                Para español, ingrese 'es'
   invalid_language: |
                     Invalid language.
                     Idioma no válido.
@@ -35,7 +35,7 @@ es:
   invalid_loan_duration: "Duración del préstamo no válida."
   get_apr: "Ingrese la APR del préstamo:
              p.ej. para el 10%, ingrese 10."
-  invalid-apr: "APR no válido."
+  invalid_apr: "APR no válido."
   get_name: "Por favor, escriba su nombre:"
   invalid_name: "Nombre inválido."
   summary: |
