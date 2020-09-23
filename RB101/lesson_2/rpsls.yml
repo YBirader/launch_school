@@ -1,0 +1,73 @@
+en:
+  welcome: "Hello %{name}. Welcome to Rock-Paper-Scissors-Lizard-Spock. Winner is the first to five."
+  input_language: |
+                Enter en for English
+                Ingrese es para español
+  invalid_language: |
+                   "Invalid language."
+                   "Idioma no válido".
+  input_name: "Enter your name:"
+  invalid_name: "Invalid name."
+  input_user_choice: |
+                     Enter:
+                      1) r for rock
+                      2) p for paper
+                      3) sc for scissors
+                      4) l for lizard
+                      5) sp for spock
+  invalid_user_choice: "Invalid choice."
+  rules: |
+         Scissors cuts Paper
+         Paper covers Rock
+         Rock crushes Lizard
+         Lizard poisons Spock
+         Spock smashes Scissors
+         Scissors decapitates Lizard
+         Lizard eats Paper
+         Paper disproves Spock
+         Spock Vaporises Rock
+         Rock crushes Scissors
+  user_won: "You won!"
+  user_tie: "It's a tie."
+  computer_won: "You lost :("
+  user_final_winner: "You are the grand winner."
+  computer_final_winner: "The computer is the grand winner :("
+  choices: "You chose %{user_choice}. The computer chose %{computer_choice}."
+  scores: "%{name}: %{user_score}; Computer: %{computer_score}"
+  repeat: "Do you want to play again? Enter y or n."
+  invalid_response: "Invalid response."
+  bye: "Goodbye! Thank you for playing Rock-Paper-Scissors-Lizard-Spock."
+
+es:
+  welcome: Hola %{name}. Bienvenido a Piedra-Papel-Tijera-Lagarto-Spock. El ganador es el primero en cinco.
+  input_name: "Introduzca su nombre:"
+  invalid_name: "Nombre inválido."
+  input_user_choice: |
+                      Entrar:
+                        1) r para rock
+                        2) p para papel
+                        3) sc para tijeras
+                        4) l para lagarto
+                        5) sp para spock
+  invalid_user_choice: "Elección no válida."
+  rules: |
+          Tijeras corta papel
+          Cubiertas de papel Roca
+          La roca aplasta a lagarto
+          Lagarto envenena a Spock
+          Spock rompe las tijeras
+          Tijeras decapita a lagarto
+          Lagarto come papel
+          El papel refuta a Spock
+          Spock vaporiza la roca
+          Rock aplasta tijeras
+  user_won: "Ganaste!"
+  user_tie: "Es un empate."
+  computer_won: "Perdiste :("
+  user_final_winner: "Eres el gran ganador."
+  computer_final_winner: "La computadora es la gran ganadora :("
+  choices: "Elegiste %{user_choice}. La computadora eligió %{computer_choice}."
+  scores: "%{name}: %{user_score}; Computadora: %{computer_score}"
+  repeat: "¿Quieres jugar de nuevo? Ingrese y o n."
+  invalid_response: "Respuesta invalida."
+  bye: "Adiós! Gracias por jugar a Piedra-Papel-Tijera-Lagarto-Spock."
