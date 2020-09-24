@@ -53,6 +53,8 @@ def format_language(language)
   case language
   when 'english' then 'en'
   when 'spanish' then 'es'
+  else
+    language
   end
 end
 
@@ -75,7 +77,7 @@ def retrieve_user_choice(language)
   user_choice = ''
   loop do
     prompt(messages('input_user_choice', language))
-    user_choice = gets.chomp
+    user_choice = gets.chomp.downcase
     break if valid_choice?(user_choice)
     prompt(messages('invalid_user_choice', language))
   end
@@ -157,7 +159,7 @@ def play_again?(language)
     break if valid_response?(answer)
     prompt(messages('invalid_response', language))
   end
-  answer == 'y'
+  answer == 'y' || answer == 'yes'
 end
 
 def valid_response?(response)
