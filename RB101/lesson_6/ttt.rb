@@ -83,6 +83,7 @@ def minimax(current_board, current_player)
 
   available_squares = empty_squares(current_board)
   moves = []
+  score = nil
 
   available_squares.each do |available_square|
     move = {}
@@ -98,7 +99,7 @@ def minimax(current_board, current_player)
   best_score = current_player == 'computer' ? -Float::INFINITY : Float:: INFINITY
 
   if current_player == 'computer'
-    for hsh in moves
+    moves.each do |hsh|
       hsh.each do |move, score|
         if score > best_score
           best_move = move
@@ -107,7 +108,7 @@ def minimax(current_board, current_player)
       end
     end
   else
-    for hsh in moves 
+    moves.each do |hsh| 
       hsh.each do |move, score|
         if score < best_score
           best_move = move
