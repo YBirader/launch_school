@@ -48,7 +48,7 @@ def display_hands(hands)
   player_ranks = hands[:player].each_with_object([]) do |card, ranks|
     ranks << card.last
   end
-  prompt "Player has: #{player_ranks.join(', ')}" \
+  prompt "Player has: #{player_ranks.join(', ')} " \
          "with a total of #{total_cards(hands[:player])}"
 end
 
@@ -132,31 +132,31 @@ end
 
 def display_busted_user(hands, current_player, scores)
   if total_cards(hands[current_player.to_sym]) > MAX_SCORE
-    prompt("#{current_player.capitalize} is busted." \
+    prompt("#{current_player.capitalize} is busted. " \
            "#{alternate_player(current_player).capitalize} wins.")
     increment_score!(scores, alternate_player(current_player))
   end
 end
 
-# rubocop: disable Metrics/AbcSize
 def determine_round_winner(hands, current_player, scores)
-  current_player_hand = hands[current_player.to_sym]
-  alternate_player_hand = hands[alternate_player(current_player).to_sym]
-  if total_cards(current_player_hand) > total_cards(alternate_player_hand)
+  current_hand_score = total_cards(hands[current_player.to_sym])
+  alternate_hand_score = total_cards(hands[alternate_player(current_player)
+                                     .to_sym])
+
+  if current_hand_score > alternate_hand_score
     prompt("#{current_player.capitalize} wins.")
     increment_score!(scores, current_player)
-  elsif total_cards(current_player_hand) < total_cards(alternate_player_hand)
+  elsif current_hand_score < alternate_hand_score
     prompt("#{alternate_player(current_player).capitalize} wins.")
     increment_score!(scores, alternate_player(current_player))
   else
     prompt "It's a tie"
   end
 end
-# rubocop: enable Metrics/AbcSize
 
 def display_score(hands)
-  prompt("Player; #{total_cards(hands[:player])};
-          Dealer: #{total_cards(hands[:dealer])}")
+  prompt("Player; #{total_cards(hands[:player])}; " \
+          "Dealer: #{total_cards(hands[:dealer])}")
 end
 
 def play_again?
@@ -228,10 +228,11 @@ display_welcome
 loop do
   scores = initialise_scores
   round = 1
-  current_player = FIRST_MOVER
+  current_player = ''
   loop do
     deck = initialise_deck
     hands = initialise_hands(deck)
+    current_player = FIRST_MOVER
     loop do
       execute_user_choice(current_player, deck, hands, round)
       break if busted?(hands)
