@@ -30,12 +30,12 @@ en:
   goodbye: "Thank you for using Calculator!"
 
 es:
-  welcome: "Bienvenido a la Calculadora! Introduzca su nombre:"
-  greeting: "Hola %{name}!"
-  valid_name: "Por favor ingrese un nombre valido."
-  first_number: "Cual es tu primer numero?"
-  second_number: "Cual es tu segundo numero?"
-  valid_number: "Número invalido. Inténtalo de nuevo."
+  welcome: Bienvenido a la Calculadora! Introduzca su nombre
+  greeting: Hola %{name}!
+  valid_name: Por favor ingrese un nombre valido.
+  first_number: Cual es tu primer numero?
+  second_number: Cual es tu segundo numero?
+  valid_number: Número invalido. Inténtalo de nuevo.
   operation: |
       Qué operación le gustaría realizar:
       1) añadir
